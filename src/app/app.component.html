@@ -1,0 +1,30 @@
+<div class="title">
+  <div>
+    <img src="assets/miticon.jpg" alt="miticon_logo">
+  </div>
+  <h1 class="title-text">Random Generator Task Assigner</h1>
+  <div>
+    <img src="assets/mapp.jpg" alt="mapp_logo">
+  </div>
+</div>
+
+
+<div class="content-container">
+  <div class="competitor-generator-container">
+    <app-new-competitor (newCompetitorEvent)="addNewCompetitorToArray($event)"></app-new-competitor>
+    <app-list-competitors [listOfCompetitors]="competitorsList" [winner]="winner"></app-list-competitors>
+  </div>
+
+  <div class="number-generator-container">
+
+    <h3>Generated number: {{ randomNumber }} </h3>
+
+    <h4 *ngIf="winner"> Winner is: {{ winner.name }}</h4>
+
+    <button mat-raised-button *ngIf="!winner" (click)="findMinDiffBetweenRandomNumberAndChosenNumbers()">
+      Generate number
+    </button>
+
+  </div>
+</div>
+

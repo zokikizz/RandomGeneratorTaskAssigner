@@ -1,0 +1,18 @@
+<h4>Competitors:</h4>
+
+
+<mat-list>
+  <mat-list-item *ngFor="let competitor of listOfCompetitors; trackBy: trackByFn">
+    <span class="content">
+      <span>{{ competitor.name }} </span> <span>{{ competitor.number }} </span>
+    </span>
+    <button class="remove-button" mat-icon-button [disabled]="winner" (click)="deleteCompetitor(competitor)">
+      <i class="material-icons">
+        close
+      </i>
+    </button>
+
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
+
